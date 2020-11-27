@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.title = "Privado";
+    @section Scripts{
+        <script type="text/javascript" src="~/js/ajax.js"></script>
+}
+    }
+<h1>Bievenido a su Panel de Información </h1>
+
+<p>A continuación, podrá revisar sus datos sobre esta plataforma!</p><br />
+@{
+
+            if (ViewBag.usuario != null)
+            {
+
+                <p><h3>Información acerca de su Cuenta</h3></p>
+                <p><b>Su número de identificación es: </b>@ViewBag.usuario.id</p>
+                <p><b>Usuario: </b>@ViewBag.usuario.user</p>
+                <p><b>Estado de su Cuenta: ACTIVA</b></p>
+
+            }
+        }
+
+<div class="text-center">
+
+    <p>Conoce a otra persona? Ingrese su Nro de Identificación</p>
+
+    <input type="text" placeholder="Usuario ID" id="usuarioIdConAjax" />
+    <button id="buscarUsuario">Buscar</button>
+
+    <div id="usuario"></div>
+
+</div>
+<a asp-action="Logout" asp-controller="Home">Click aquí para cerrar sesión</a>

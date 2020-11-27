@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.title = "Inicio";
+
+}
+
+<div class="text-center">
+    <h1 class="display-3">Bienvenido!</h1>
+    <p>Por favor, inicie sesión para utilizar nuestros servicios.</p>
+
+    @if (ViewBag.msg != null)
+    {
+<p><b>@ViewBag.msg</b></p>}
+    
+    <form asp-action="Login" asp-controller="Home" method="post">
+
+        <input type="text" name="usuariol" placeholder="Usuario" />
+        <input type="password" name="password" placeholder="Password" />
+        <input type="submit" value="Iniciar sesión" />
+
+    </form>
+    <hr />
+    <p>Si no posee una cuenta puede crear una utilizando un serial previamente comprado!</p>
+
+    <form asp-action="Register" asp-controller="Home" method="post">
+
+        <input type="text" name="usuariof" placeholder="Usuario" />
+        <input type="password" name="password" placeholder="Password" />
+        <input type="text" name="serial" placeholder="serial"/>
+        <input type="submit" value="Registrarse" />
+
+    </form>
+
+</div>
